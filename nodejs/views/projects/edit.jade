@@ -1,0 +1,7 @@
+h2 Edit Project
+p
+  a(href='/projects', class='button') &larr; All Projects
+form(method='post', action='/projects/' + p.id)
+  input(name='p[id]', value=p.id, type='hidden')
+  input(name='_method', value='PUT', type='hidden')
+  !=partial('projects/fields', { locals: { p:p } })

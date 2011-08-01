@@ -1,0 +1,15 @@
+h1 Users
+
+p
+	a(class='button', href='/users/new') + New User
+
+ul
+	- for (var u in users)
+		li
+			a(href='/users/'+ users[u].id) 
+				=users[u].firstname +' '+ users[u].lastname + ' '
+			!=users[u].email
+			-if( users[u].active==true )
+				a(class='button',href='/users/'+ users[u].id + '/edit') Edit
+				a(class='button destroy',href='/users/'+ users[u].id) Delete
+			

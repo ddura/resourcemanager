@@ -1,0 +1,6 @@
+.page
+	h2 New Project
+	p
+		a.button(href='/projects') &larr; All Projects
+	form(method='post', action='/projects')
+		!=partial('fields', { locals: { p: p } })

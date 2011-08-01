@@ -1,0 +1,13 @@
+h1 Projects
+
+p
+	a(class='button', href='/projects/new') + New Project
+
+ul
+	- for (var p in projects)
+		li
+			-if( projects[p].active==true )
+				a(class='button',href='/projects/'+ projects[p].id + '/edit') Edit
+				a(class='button destroy',href='/projects/'+ projects[p].id) Delete
+			a(href='/projects/'+ projects[p].id) 
+				!=projects[p].name
